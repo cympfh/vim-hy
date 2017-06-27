@@ -74,10 +74,10 @@ setlocal lispwords+=with*,with-decorator
 setlocal lispwords+=yield,yield-from,zero?,\|=,~,\|
 
 let s:indent_path = fnamemodify(expand("<sfile>"), ":p:h")
-python import sys
+python3 import sys
 exe 'python sys.path.insert(0, "' . escape(s:indent_path, '\"') . '")'
-python import hy
-python import hy_indent
+python3 import hy
+python3 import hy_indent
 
 function! HyIndent(lnum)
 	return pyeval('hy_indent.do_indent(' . a:lnum . ')')
