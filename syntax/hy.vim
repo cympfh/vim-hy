@@ -171,7 +171,7 @@ highlight default link hyParen     Delimiter
 
 " Conceal
 if !has('conceal') || &enc != 'utf-8' || get(g:, 'hy_enable_conceal', 0) != 1
-	finish
+    finish
 endif
 
 syntax keyword hyDefine fn     conceal cchar=λ
@@ -210,14 +210,14 @@ syntax keyword hyVariable epsilon conceal cchar=ε
 syntax match hyAnonVarName "x" conceal cchar=x contained
 let s:idxchars = ['₀', '₁', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉']
 for s:idx in range(0, 9)
-	execute 'syntax match hyAnonVarIndex "' . s:idx . '" conceal cchar=' . s:idxchars[s:idx] . ' contained'
+    execute 'syntax match hyAnonVarIndex "' . s:idx . '" conceal cchar=' . s:idxchars[s:idx] . ' contained'
 endfor
 if get(g:, "hy_conceal_fancy", 0) == 1
-	syntax match hyAnonVar "\<x[0-9]\+\>" contains=hyAnonVarName,hyAnonVarIndex
-	syntax keyword hyAnonVar xi conceal cchar=ξ
+    syntax match hyAnonVar "\<x[0-9]\+\>" contains=hyAnonVarName,hyAnonVarIndex
+    syntax keyword hyAnonVar xi conceal cchar=ξ
 else
-	syntax match hyAnonVarIndex "i" conceal cchar=¡ contained
-	syntax match hyAnonVar "\<x[0-9i]\+\>" contains=hyAnonVarName,hyAnonVarIndex
+    syntax match hyAnonVarIndex "i" conceal cchar=¡ contained
+    syntax match hyAnonVar "\<x[0-9i]\+\>" contains=hyAnonVarName,hyAnonVarIndex
 endif
 
 " hi! link Conceal Define
