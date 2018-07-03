@@ -13,7 +13,7 @@ endif
 let b:current_syntax = "hy"
 
 " hy version 0.10.0
-syntax keyword hyConstant null nil
+syntax keyword hyConstant None
 syntax keyword hyBoolean false true
 syntax keyword hySpecial macro-error defmacro-alias let if-python2 def setv fn lambda
 syntax keyword hyException throw raise try except catch
